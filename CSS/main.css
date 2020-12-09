@@ -1,0 +1,930 @@
+@charset "utf-8";
+@font-face {
+	font-family: "gong";
+	src: url("../Font/Gong Gothic Light.ttf") format("truetype");
+}
+/*-----------------------------------------
+----------------- 메인화면 -----------------
+-----------------------------------------*/
+/* 상단 */
+.header { 
+	position: relative; 
+	margin: 0 auto;
+}
+/* 로그인 및 회원가입 */
+.nav_sign {
+  width: 100%;
+  height: 30px;
+  text-align: right;
+	background-color: rgb(206, 206, 206);
+	
+}
+.nav_sign a {
+  margin-right: 25px;
+  font-size: 12px;
+  font-family: gong;
+  text-decoration: none;
+  color: rgb(104, 104, 104);
+}
+
+/* 메뉴 바 */
+.topMenu { 
+  height: 30px; /* 메인 메뉴의 높이 */ 
+  width: 1000px; /* 메인 메뉴의 넓이 */ 
+  border-bottom: 2px solid grey;
+} 
+.topMenu ul { /* 메인 메뉴 안의 ul을 설정함: 상위메뉴의 ul+하위 메뉴의 ul */ 
+  list-style-type: none; /* 메인 메뉴 안의 ul 내부의 목록 표시를 없애줌 */ 
+  margin: 0px; /* 메인 메뉴 안의 ul의 margin을 없앰 */ 
+  padding: 0px; /* 메인 메뉴 안의 ul의 padding을 없앰 */
+} 
+.topMenu ul li { /* 메인 메뉴 안에 ul 태그 안에 있는 li 태그의 스타일 적용(상위/하위메뉴 모두) */ 
+  color: black; /* 글씨 색을 흰색으로 설정 */ 
+  background-color: #fc5230; /* 배경 색을 RGB(2D2D2D)로 설정 */ 
+  float: left; /* 왼쪽으로 나열되도록 설정 */ 
+  line-height: 30px; /* 텍스트 한 줄의 높이를 30px로 설정 */ 
+  vertical-align: middle; /* 세로 정렬을 가운데로 설정 */ 
+  text-align: center; /* 텍스트를 가운데로 정렬 */ 
+  position: relative; /* 해당 li 태그 내부의 top/left 포지션 초기화 */ 
+} 
+.roundLeft{
+  border-radius: 10px 0 0 0;
+}
+.roundRight{
+  border-radius: 0 10px 0 0;
+}
+.menuLink, .submenuLink { /* 상위 메뉴와 하위 메뉴의 a 태그에 공통으로 설정할 스타일 */ 
+  text-decoration:none; /* a 태그의 꾸밈 효과 제거 */ 
+  display: block; /* a 태그의 클릭 범위를 넓힘 */ 
+  width: 247px; 
+  font-size: 16px; /* 폰트 사이즈를 12px로 설정 */ 
+  font-weight: bold; /* 폰트를 굵게 설정 */ 
+  font-family: gong; /* 기본 폰트를 영어/한글 순서대로 설정 */ 
+} 
+.menuLink { /* 상위 메뉴의 글씨색을 흰색으로 설정 */ 
+  color: black; 
+} 
+.topMenuLi:hover .menuLink { /* 상위 메뉴의 li에 마우스오버 되었을 때 스타일 설정 */ 
+  color: red; /* 글씨 색 빨간색 */ 
+  background-color: #4d4d4d; /* 배경색을 밝은 회색으로 설정 */ 
+}
+.roundLeft:hover{
+  border-radius: 10px 0 0 0;
+}
+.roundRight:hover{
+  border-radius: 0 10px 0 0;
+}
+.submenuLink { /* 하위 메뉴의 a 태그 스타일 설정 */ 
+  width: 245px;
+  color: #2d2d2d; /* 글씨 색을 RGB(2D2D2D)로 설정 */ 
+  background-color: white; /* 배경색을 흰색으로 설정 */ 
+  border: solid 1px black; /* 테두리를 설정 */ 
+  margin-top: -1px; /* 위 칸의 하단 테두리와 아래칸의 상단 테두리가 겹쳐지도록 설덩 */ 
+}  
+.submenu { /* 하위 메뉴 스타일 설정 */ 
+  position: absolute; /* html의 flow에 영향을 미치지 않게 absolute 설정 */ 
+  height: 0px; /* 초기 높이는 0px로 설정 */ 
+  overflow: hidden; /* 실 내용이 높이보다 커지면 해당 내용 감춤 */ 
+  transition: height .2s; /* height를 변화 시켰을 때 0.2초간 변화 되도록 설정(기본) */ 
+  -webkit-transition: height .2s; /* height를 변화 시켰을 때 0.2초간 변화 되도록 설정(구버전 크롬/사파라ㅣ) */ 
+  z-index: 50;
+} 
+.topMenuLi:hover .submenu { /* 상위 메뉴에 마우스 모버한 경우 그 안의 하위 메뉴 스타일 설정 */ 
+  height: 200px; /* 높이를 93px로 설정 */ 
+} 
+.submenuLink:hover { /* 하위 메뉴의 a 태그의 마우스 오버 스타일 설정 */ 
+  color: red; /* 글씨색을 빨간색으로 설정 */ 
+  background-color: #dddddd; /* 배경을 RGB(DDDDDD)로 설정 */ 
+}
+.middle {
+  position: relative;
+  z-index: 1;
+}
+
+/* 신상품 슬라이드 */
+li{list-style:none;}
+.slide_wrapper {
+  background-color: tomato;
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  height: 300px;
+  overflow: hidden;
+}
+.slides{
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left 0.5s ease-out;
+  margin: 0; 
+}
+.slides li:not(:last-child){
+  float: left;
+  margin-right: 30px;
+}
+.nextprev {
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+.controls{
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.controls span{
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+.controls span.prev2 {
+	right:calc(100%+50px);
+}
+.contorls span.next2 {
+	left:calc(100%+50px);
+}
+
+/* 인기상품 슬라이드 */
+.popular {
+	background-color: peru; 
+	width: 1000px;
+	position: relative; 
+	margin: 0 auto;
+	text-align: center;
+}
+.popular_single {
+	display: none;
+}
+.menu {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+  transition: background-color 0.6s ease;
+}
+
+.active, .menu:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* 카테고리 테이블 */
+.category {
+  background-color: burlywood;
+  width: 1000px;
+  height: 2440px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+.bakery {
+  width: 905px;
+  height: 300px;
+  margin-top: 20px;
+  background-color: slateblue;
+}
+.snack {
+  width: 1000px;
+  height: 780px;
+}
+.snack_sub {
+  width: 330px;
+  height: 600px;
+  margin: 15px;
+  float: left;
+}
+.snack_sub2 {
+  width: 230px;
+  height: 600px;
+  margin: 15px;
+  float: left;
+}
+.snack_element {
+  background-color: skyblue;
+  width: 330px;
+  height: 330px;
+  margin: 15px;
+  margin-top: 30px;
+}
+.snack_element2 {
+  background-color: lightgreen;
+  width: 230px;
+  height: 230px;
+  margin: 15px;
+}
+.beverage {
+  width: 1000px;
+  height: 790px;
+  background-color: olive;
+}
+.beverage_element {
+  width: 350px;
+  height: 350px;
+  margin: 30px 75px 30px 75px;
+  float:left;
+  background-color: palevioletred;
+}
+.bottom {
+  margin-top: 0;
+}
+.processed {
+  width: 1000px;
+  height: 570px;
+  background-color: lime;
+}
+.processed_element {
+  width: 300px;
+  height: 250px;
+  margin: 16.5px;
+  float: left;
+  background-color: lightslategray;
+}
+
+
+/* copyright */
+.copyright {
+	background-color: rgb(206, 206, 206);
+	position: relative; 
+	text-align: center;
+	width: 100%; 
+	margin: 0 auto;
+	margin-bottom: 0px;
+	line-height: 25px;
+	color: white;
+}
+
+/*-----------------------------------------------
+----------------- 상품 목록 화면 --------------------
+-----------------------------------------------*/
+
+.category_main {
+  width: 1000px;
+  height: 1335px;
+  margin: 0 auto;
+  position: relative;
+}
+/* 왼쪽 카테고리 슬라이드 */
+.left_category {
+  width: 199px;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  border-right: 1px solid rgb(173, 172, 172);
+}
+.category_title {
+  margin-top: 15px;
+  font-family: gong;
+}
+.category_bakery {
+  margin-top: 10px;
+  margin-left: 17px;
+  margin-bottom: 10px;
+  font-family: gong;
+}
+.left_category_detail {
+  margin-bottom: 10px;
+}
+.left_category div {
+  margin-top: 10px;
+  margin-left: 30px;
+  font-family: gong;
+}
+.left_category_detail summary {
+  font-family: gong;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+.left_category_detail summary::-webkit-details-marker {
+  color: transparent;
+  transform: rotate3d(0, 0, 1, 90deg);
+  transition: transform 0.25s;
+}
+.left_category_detail[open] > summary ~ * {
+  animation: reveal 0.5s;
+}
+@keyframes reveal {
+  from {
+      opacity: 0;
+      transform: translate3d(0, -10px, 0);}
+  to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);}
+}
+
+/* 배너 */
+.banner {
+  width: 800px;
+  height: 300px;
+  position: absolute;
+  right: 0;
+}
+/* 정렬 버튼 */
+.sort {
+  background-color: rgb(204, 204, 204);
+  width: 800px;
+  height: 40px;
+  position: absolute;
+  top: 300px;
+  right: 0;
+  text-align: right;
+  border-radius: 0 0 10px 10px;
+}
+.sort div {
+  margin-top: 7px;
+  margin-right: 20px;
+}
+.sort_btn {
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: gong;
+}
+.sort_btn:hover {
+  cursor: pointer;
+  color: tomato;
+}
+/* 상품 목록 */
+.parent {
+  width: 800px;
+  position: absolute;
+  top: 330px;
+  right: 0;
+  text-align: center;
+}
+.child {
+  width: 30%;
+  margin-top: 25px;
+  margin-left: 25px;
+  float: left;
+  border-bottom: 1.5px solid grey;
+}
+.child p {
+  font-family: "Malgun Gothic", serif;
+}
+.child:hover {
+  box-shadow: 1px 1px 20px #ddd;
+  transition: box-shadow .3s;
+}
+.child img {
+  margin-top: 15px;
+}
+.child p {
+  text-align: left;
+  margin-left: 30px;
+}
+.rates {
+  margin-bottom: 15px;
+}
+.rates img {
+  margin: 0 auto;
+  width: 15px;
+  height: 15px;
+}
+
+/*--------------------------------------------
+----------------- 상품 상세 페이지 ------------
+--------------------------------------------*/
+.top {
+	width: 1000px;
+	height: 630px;
+	position: relative;
+  margin: 0 auto;
+  border-bottom: 2px solid grey;
+}
+.path {
+	width: 1000px;
+	height: 40px;
+}
+.path p {
+	margin-top: 15px;
+  margin-left: 10px;
+  float: left;
+  color: rgb(104, 104, 104);
+}
+.product_img {
+	width: 500px;
+	height: 565px;
+	float: left;
+}
+.mainImg {
+	width: 450px;
+	height: 450px;
+  position: relative;
+  text-align: center;
+	margin: 15px;
+}
+#bigImg {
+  width: 100%;
+  height: 100%;
+}
+.subImg {
+	width: 214px;
+	height: 74px;
+	margin: 15px;
+	position: relative;
+	margin: 0 auto;
+}
+.smallImg {
+	width: 70px;
+	height: 70px;
+	float: left;
+}
+.subImg :hover {
+	cursor: pointer;
+	border: 2px solid blue;
+}
+.product_buy {
+	width: 500px;
+	height: 565px;
+	background-color: white;
+	float: left;
+}
+.product_info {
+	margin-top: 50px;
+	margin-left: 20px;
+}
+.product_name {
+  margin-top: -30px;
+  margin-bottom: 10px;
+	font-size: 30px;
+}
+.product_line {
+  width:460px; 
+  margin-top: 15px; 
+  margin-left: -10px; 
+  margin-bottom: 15px;
+  border-bottom: 2px solid grey;
+}
+.product_price {
+  margin-bottom: 15px;
+	font-size: 30px;
+	font-weight: bold;
+}
+.heart {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 92%;
+  top: 26%;
+}
+.heart:hover {
+  cursor: pointer;
+}
+.product_shipment {
+	font-size: 15px;
+	color: grey;
+	margin-bottom: 15px;
+}
+.leftMargin {
+  margin-left: 15px;
+}
+.product_quantity {
+  margin-top: 5px;
+  margin-right: 15px;
+  float: left;
+  font-size: 30px;
+}
+.product_quantity_input {
+	width: 100px; 
+	height: 50px; 
+	font-size:28px; 
+	text-align: center;
+}
+.product_select {
+	width: 300px;
+	height: 50px;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+.product_select option {
+	font-size: 20px;
+}
+.product_total {
+  margin-top: 10px;
+  margin-right: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(61, 52, 52);
+  float: left;
+}
+.product_total_price {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(192, 23, 23);
+}
+.product_btn {
+	width: 230px;
+	height: 60px;
+  margin: 20px 10px 10px -5px;
+  font-size: 25px;
+  background-color: tomato;
+  border: 1px solid black;
+  font-family: gong;
+}
+.basket {
+  background-color: white;
+  color:  tomato;
+}
+.product_btn:hover {
+	background-color: rgba( 0, 0, 0, 0.4 );
+}
+/*상세보기, 접기*/
+.product_show{
+  max-height: 300px;
+  width: 1000px;
+  overflow: hidden;
+  text-align: center;
+}
+.product_showMax{
+  width: 1000px;
+  text-align: center;
+}
+.load_div {
+  text-align: center;
+}
+.btn_open {
+  width: 230px;
+	height: 60px;
+	margin: 10px 10px 10px -5px;
+	font-size: 25px;
+	border: 1px solid cyan;
+}
+.btn_close {
+  width: 230px;
+	height: 60px;
+	margin: 10px 10px 10px -5px;
+	font-size: 25px;
+	border: 1px solid cyan;
+}
+.hide{
+  display: none;
+}
+.product_review {
+  width: 1000px;
+  height: 300px;
+  position: relative;
+  background-color: tomato;
+}
+
+/*------------------------------------------
+----------------- 로그인 화면 ---------------
+------------------------------------------*/
+/* 로그인 화면 전체 div 설정 */
+.content_div_login {
+	position: relative;
+	width: 500px;
+	height: 450px;
+	margin: 0 auto;
+}
+/* Login 타이틀 글자 */
+.main-title {
+	color: white;
+	font-size: 50px;
+  font-weight: bold;
+  font-family: gong;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+/* 아이디 입력 텍스트박스 테이블 설정 */
+.id-table {
+	height: 50px;
+	width: 430px;
+  margin: 10px auto;
+	
+}
+/* id, pw 입력 텍스트박스 설정 */
+.id-pw-input {
+	height: 50px;
+	width: 430px;
+	font-size: 20px;
+}
+/* 로그인 버튼 table 설정 */
+.login_btn_table {
+	height: 40px;
+	width: 30px;
+  margin-top: 1%;
+}
+/* 로그인 버튼 설정 */
+.login_btn {
+	height: 50px;
+	width: 430px;
+	background-color: #fc5230;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+  cursor: pointer;
+  font-family: gong;
+  border: 1.5px solid rgb(104, 104, 104);
+}
+.btn_color {
+  background-color: white;
+  color: #fc5230;
+}
+/* 로그인 하위 메뉴 경계선 설정 */
+.menu_line {
+	height: 0px;
+	width: 430px;
+}
+/* 로그인 하위 메뉴 설정 */
+.login_sub_menu {
+	height: 50px;
+}
+/* 로그인 하위 메뉴 글자 설정 */
+.login_sub_menu a {
+  text-decoration: none;
+  font-family: gong;
+	color: tomato;
+}
+.copyright_bottom {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: grey;
+}
+
+/*---------------------------------------
+-------------- 회원가입 화면 -------------
+---------------------------------------*/
+.signUp {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 470px;
+  text-align: center;
+}
+.signUp_input {
+  width: 430px;
+  margin: 10px auto;
+  height: 50px;
+  font-size: 20px;
+  border: 1px solid rgb(104, 104, 104);
+  outline-color: tomato;
+}
+.email {
+  width: 190px;
+  height: 50px;
+  margin-left: 33px;
+  margin-right: 13px;
+  font-size: 20px;
+  float: left;
+  outline-color: tomato;
+}
+.email_div {
+  width: 20px;
+  font-size: 30px;
+  float: left;
+}
+.email_select {
+  width: 190px;
+  height: 52px;
+  margin-right: 15px;
+  font-size: 20px;
+  outline-color: tomato;
+}
+.email_select option {
+  width: 190px;
+  height: 50px;
+  font-size: 20px;
+}
+.phonenumber {
+  width: 103px;
+  height: 50px;
+  font-size: 20px;
+  outline-color: tomato;
+}
+.checkTerms_div {
+  width: 400px;
+  height: 140px;
+  position: relative;
+  margin: 0 auto;
+}
+.checkTerms_div input {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  top: 1.5px;
+}
+.checkTerms_div label {
+  font-size: 20px;
+}
+.signUp_div {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+.signUp_btn {
+  height: 50px;
+  width: 430px;
+  margin-top: 20px;
+	background-color: #fc5230;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+  cursor: pointer;
+  font-family: gong;
+  border: 1.5px solid rgb(104, 104, 104);
+}
+
+/*---------------------------------------
+-------------- 아이디 찾기 화면 ----------
+---------------------------------------*/
+
+.findID {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;   
+  border-bottom: 1.5px solid grey; 
+}
+.findID_section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+.findID_tab {
+  display: none;
+}
+.findID_label {
+  width: 195px;
+  display: inline-block;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-family: gong;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+.findID_label:hover {
+  color: tomato;
+  cursor: pointer;
+  font-family: gong;
+}
+.findID_tab:checked + label {
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid tomato;
+    border-bottom: 1px solid #ffffff;
+}
+.findID_email {
+  width: 190px;
+  height: 50px;
+  margin-left: 33px;
+  margin-right: 12px;
+  font-size: 20px;
+  float: left;
+  outline-color: tomato;
+}
+.findID_email_div {
+  width: 30px;
+  font-size: 30px;
+  float: left;
+}
+.findID_email_select {
+  width: 190px;
+  height: 52px;
+  margin-right: 23px;
+  font-size: 20px;
+  outline-color: tomato;
+}
+.findID_email_select option {
+  width: 190px;
+  height: 50px;
+  font-size: 20px;
+}
+.findID_phonenumber {
+  width: 103px;
+  height: 50px;
+  font-size: 20px;
+  outline-color: tomato;
+}
+.findID_verify {
+  width: 205px;
+  height: 50px;
+  position: absolute;
+  margin: 10px auto;
+  top: 50%;
+  left: 8%;
+  font-size: 20px;
+  border: 1px solid rgb(104, 104, 104);
+  outline-color: tomato;
+  float: left;
+}
+.findID_verify_btn {
+  width: 205px;
+  height: 52px;
+  position: absolute;
+  margin: 10px auto;
+  top: 50%;
+  left: 52.5%;
+  background-color: white;
+  color: #fc5230;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: gong;
+  border: 1.5px solid rgb(104, 104, 104);
+}
+.findID_btn {
+	width: 205px;
+  height: 52px;
+  position: absolute;
+  margin: 10px auto;
+  top: 75%;
+  left: 31%;
+	background-color: #fc5230;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+  cursor: pointer;
+  font-family: gong;
+  border: 1.5px solid rgb(104, 104, 104);
+}
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+/*---------------------------------
+--------- 비밀번호 찾기 화면 -------
+----------------------------------*/
+
+.findPW {
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  border-bottom: 1.5px solid grey;
+}
+.findPW_input {
+  width: 430px;
+  margin: 10px auto;
+  height: 50px;
+  font-size: 20px;
+  border: 1px solid rgb(104, 104, 104);
+  outline-color: tomato;
+}
+.findPW_email {
+  width: 190px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 33px;
+  margin-right: 12px;
+  font-size: 20px;
+  float: left;
+  outline-color: tomato;
+}
+.findPW_email_div {
+  width: 30px;
+  margin-top: 10px;
+
+  font-size: 30px;
+  float: left;
+}
+.findPW_email_select {
+  width: 190px;
+  height: 52px;
+  margin-top: 10px;
+  margin-right: 26px;
+  font-size: 20px;
+  outline-color: tomato;
+}
+.findPW_email_select option {
+  width: 190px;
+  height: 50px;
+  font-size: 20px;
+}
+.findPW_btn {
+	width: 205px;
+  height: 52px;
+  position: absolute;
+  top: 47%;
+  left: 42.5%;
+	background-color: #fc5230;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+  cursor: pointer;
+  font-family: gong;
+  border: 1.5px solid rgb(104, 104, 104);
+}

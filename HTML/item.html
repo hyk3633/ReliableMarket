@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="웹프로젝트">
+	<meta name="keywords" content="HTML5, CSS, JavaScript">
+	
+	<!-- CSS 파일 외부참조 -->
+	<link rel="stylesheet" type="text/css" href="../CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/slide.css">
+	
+	<title>상품상세페이지</title>
+</head>
+
+<body>
+
+	<!-- 사이트 로고 및 상단 메뉴 바 -->
+	<div style="z-index: 2;">		
+		<header class="header">
+
+			<!-- 로그인 및 회원가입 메뉴 -->
+			<nav class="nav_sign">
+				<a href="./HTML/login.html">로그인</a>
+				<a href="./HTML/signUp.html" style="margin-right: 135px;">회원가입</a>
+			</nav>	
+
+			<!-- 사이트 로고 -->
+			<p align="center">
+				<a href="../main.html">
+					<img src="../Images/logo.png" width="200px;">
+				</a>
+			</p>
+
+			<!-- 카테고리 메뉴 바 -->	
+			<nav class="topMenu"> 
+				<ul> 
+					<li class="topMenuLi roundLeft">
+						<a class="menuLink roundLeft" href="none">베이커리</a>
+					</li> 
+					<li>|</li> 
+					<li class="topMenuLi"> 
+						<a class="menuLink" href="none">과자</a>
+						<ul class="submenu"> 
+							<li><a class="submenuLink">스낵</a></li> 
+							<li><a class="submenuLink">초콜릿</a></li> 
+							<li><a class="submenuLink">사탕/젤리</a></li> 
+							<li><a class="submenuLink">아이스크림</a></li>
+							<li><a class="submenuLink">씨리얼</a></li>
+						</ul>
+					</li>  
+					<li>|</li> 
+					<li class="topMenuLi"> 
+						<a class="menuLink" href="none">음료</a> 
+						<ul class="submenu"> 
+							<li><a class="submenuLink">탄산</a></li> 
+							<li><a class="submenuLink">주스</a></li> 
+							<li><a class="submenuLink">우유</a></li>
+							<li><a class="submenuLink">생수</a></li> 
+						</ul> 
+					</li> 
+					<li>|</li> 
+					<li class="topMenuLi roundRight"> 
+						<a class="menuLink roundRight" href="none">가공식품</a> 
+						<ul class="submenu"> 
+							<li><a class="submenuLink">햄/소시지/베이컨</a></li> 
+							<li><a class="submenuLink">냉동식품</a></li> 
+							<li><a class="submenuLink">통조림</a></li>
+							<li><a class="submenuLink">즉석식품</a></li> 
+							<li><a class="submenuLink">라면/면</a></li>
+							<li><a class="submenuLink">장/소스/잼</a></li>
+						</ul> 
+					</li>
+				</ul> 
+			</nav>
+		</header>
+	</div>
+	<!-- 사이트 로고 및 상단 메뉴 바 끝 -->
+
+	<!-- 메인 영역 -->
+	<div class="top">
+		<!-- 카테고리 경로 -->
+		<div class="path">
+			<p>예1</p>
+			<p>></p>
+			<p>예2</p>
+			<p>></p>
+			<p>예3</p>
+		</div>
+		<!-- 상품 이미지 -->
+		<div class="product_img">
+			<div id="big" class="mainImg">
+				<img id="bigImg" src="../Images/a.jpg">
+			</div>
+			<div id="small" class="subImg">
+				<img class="smallImg" src="../Images/a.jpg">
+				<img class="smallImg" src="../Images/b.jpg">
+				<img class="smallImg" src="../Images/c.jpg">
+			</div>
+		</div>
+		<!-- 상품 구매 -->
+		<div class="product_buy">
+			<div class="product_info">
+				<p class="product_name">상품명</p>
+				<p class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_half.png">
+					<img src="../Images/star_empty.png">
+				</p>
+				<div class="product_line"></div>
+				<p id="saleprice" class="product_price" style="float: left;">14,900</p>
+				<p class="product_price">원</p>
+				<p onclick="wishlist_notLoggedin()"><img class="heart" src="../Images/heart.png" onmouseover="this.src='../Images/heart_red.png';" onmouseout="this.src='../Images/heart.png';"></p>
+				<details>
+					<summary class="product_shipment">배송비 - 2500원 조건부 무료배송</summary>
+					<p class="product_shipment leftMargin">3만원 이상 구매시 무료배송</p>
+				</details>
+				<select class="product_select">
+					<option>옵션선택</option>
+					<option>상품 1</option>
+					<option>상품 2</option>
+				</select>
+				<br>
+				<div style="margin-top: 5px; text-align: left;">
+					<p class="product_quantity">수량</p>
+					<input id="quantity" class="product_quantity_input" onchange="priceCalcul()" type="number" placeholder="1">
+				</div>
+				<br>
+				<div style="text-align: left; margin-top: -10px;">
+					<p class="product_total">총 상품금액</p>
+					<p id="finalprice" class="product_total_price">0</p>
+				</div>
+				<button class="product_btn">구매하기</button>
+				<button class="product_btn basket">장바구니</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 상품 더보기란 -->
+	<div class="detailinfo product_show">
+		<div class="product_showMax"><img src="../Images/d.jpg"></div>
+	</div>
+	<div class="load_div">
+		<button class="btn_open">더보기</button>
+		<button class="btn_close hide">접기</button>
+	</div>
+
+	<!--  -->
+	<div class="product_review"></div>
+
+	<!-- COPYRIGHT -->
+	<div class="copyright">
+		<footer>
+			<font style="font-size: 12px;">이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 고객센터</font><br>
+			<font style="font-size: 10px; color: grey;">본 컨텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font><br>
+			<b>Copyright © All Rights Reserved.</b>
+		</footer>
+	</div>
+
+	<!-- JavaScript 파일 외부 참조-->
+	<script type="text/javascript" src="../JavaScript/main.js"></script>
+	<script type="text/javascript" src="../JavaScript/slide2.js"></script>
+	<script type="text/javascript" src="../JavaScript/mouseover.js"></script>
+	<script type="text/javascript" src="../JavaScript/contentloader.js"></script>
+
+</body>
+
+</html>

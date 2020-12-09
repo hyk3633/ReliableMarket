@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="웹프로젝트">
+	<meta name="keywords" content="HTML5, CSS, JavaScript">
+	
+	<!-- CSS 파일 외부참조 -->
+	<link rel="stylesheet" type="text/css" href="./CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="./CSS/slide.css">
+	
+	<title>쇼핑몰</title>
+</head>
+
+<body>
+
+	<!-- 사이트 로고 및 상단 메뉴 바 -->
+	<div>
+		
+		<header class="header">
+
+			<!-- 로그인 및 회원가입 메뉴 -->
+			<nav class="nav_sign">
+				<a href="./HTML/login.html">로그인</a>
+				<a href="./HTML/signUp.html" style="margin-right: 135px;">회원가입</a>
+			</nav>
+			
+			<!-- 사이트 로고 -->
+			<p align="center">
+				<a href="main.html">
+					<img src="./Images/logo.png" width="200px;">
+				</a>
+			</p>
+			
+			<!-- 카테고리 메뉴 바 -->
+			<nav class="topMenu"> 
+				<ul> 
+					<li class="topMenuLi roundLeft">
+						<a class="menuLink roundLeft" href="none">베이커리</a>
+					</li> 
+					<li>|</li> 
+					<li class="topMenuLi"> 
+						<a class="menuLink" href="none">과자</a>
+						<ul class="submenu"> 
+							<li><a class="submenuLink">스낵</a></li> 
+							<li><a class="submenuLink">초콜릿</a></li> 
+							<li><a class="submenuLink">사탕/젤리</a></li> 
+							<li><a class="submenuLink">아이스크림</a></li>
+							<li><a class="submenuLink">씨리얼</a></li>
+						</ul>
+					</li>  
+					<li>|</li> 
+					<li class="topMenuLi"> 
+						<a class="menuLink" href="none">음료</a> 
+						<ul class="submenu"> 
+							<li><a class="submenuLink">탄산</a></li> 
+							<li><a class="submenuLink">주스</a></li> 
+							<li><a class="submenuLink">우유</a></li>
+							<li><a class="submenuLink">생수</a></li> 
+						</ul> 
+					</li> 
+					<li>|</li> 
+					<li class="topMenuLi roundRight"> 
+						<a class="menuLink roundRight" href="none">가공식품</a> 
+						<ul class="submenu"> 
+							<li><a class="submenuLink">햄/소시지/베이컨</a></li> 
+							<li><a class="submenuLink">냉동식품</a></li> 
+							<li><a class="submenuLink">통조림</a></li>
+							<li><a class="submenuLink">즉석식품</a></li> 
+							<li><a class="submenuLink">라면/면</a></li>
+							<li><a class="submenuLink">장/소스/잼</a></li>
+						</ul> 
+					</li>
+				</ul> 
+			</nav>
+			
+		</header>
+	</div>
+	<!-- 사이트 로고 및 상단 메뉴 바 끝 -->
+
+	<!-- 중간 광고 배너 -->
+	<div id="slider-wrap" class="middle">
+		<ul id="slider">
+			<li>
+				<div>
+					<h3>Slide #1</h3>
+					<span>Sub-title #1</span>
+				</div>
+				<img src="https://fakeimg.pl/350x200/960a96/000?text=11111">
+			</li>
+	
+			<li>
+				<div>
+					<h3>Slide #2</h3>
+					<span>Sub-title #2</span>
+				</div>
+				<img src="https://fakeimg.pl/350x200/D27328/000?text=22222">
+			</li>
+	
+			<li>
+				<div>
+					<h3>Slide #3</h3>
+					<span>Sub-title #3</span>
+				</div>
+				<img src="https://fakeimg.pl/350x200/FF607F/000?text=33333">
+			</li>
+	
+			<li>
+				<div>
+					<h3>Slide #4</h3>
+					<span>Sub-title #4</span>
+				</div>
+				<img src="https://fakeimg.pl/350x200/0A6E0A/000?text=44444">
+			</li>
+	
+			<li>
+				<div>
+					<h3>Slide #5</h3>
+					<span>Sub-title #5</span>
+				</div>
+				<img src="https://fakeimg.pl/350x200/0064CD/000?text=55555">
+			</li>
+		</ul>
+	
+		<div class="slider-btns" id="next"><span>▶</span></div>
+		<div class="slider-btns" id="prev"><span>◀</span></div>
+	
+		<div id="slider-pagination-wrap">
+			<ul>
+			</ul>
+		</div>
+	</div>
+	<br>
+		<!-- The dots/circles -->
+	<div style="text-align:center">
+		<span class="dot" onclick="currentSlide(0)"></span>
+		<span class="dot" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+		<span class="dot" onclick="currentSlide(4)"></span>
+		<span class="dot" onclick="currentSlide(5)"></span>
+	</div>
+	<!-- 중간 광고 배너 끝 -->
+
+	<!-- 신상품 슬라이드 -->
+	<h2 style="position: relative; margin: 0 auto; width: 1000px;">신상품 슬라이드</h2>
+	<div class="slide_wrapper">
+		<ul class="slides">
+		  <li><img src="http://placehold.it/300x300" alt=""></li>
+		  <li><img src="http://placehold.it/300x300" alt=""></li>
+		  <li><img src="http://placehold.it/300x300" alt=""></li>
+		  <li><img src="http://placehold.it/300x300" alt=""></li>
+		  <li><img src="http://placehold.it/300x300" alt=""></li>
+		  <li><img src="http://placehold.it/300x300" alt=""></li> 
+		  <li><img src="http://placehold.it/300x300" alt=""></li>
+		  <li><img src="http://placehold.it/300x300" alt=""></li>
+		</ul>
+	</div>
+	<div class="nextprev">
+		<p class="controls">
+			<span class="prev2">prev</span>
+			<span class="next2">next</span>
+		</p>
+	</div>
+
+	<!-- 인기상품 슬라이드 -->
+	<h2 style="position: relative; margin: 0 auto; width: 1000px;">인기상품 슬라이드</h2>
+	
+	<div class="popular">
+		<p>
+			<span class="menu" onclick="slidePage(1)">영역1</span>
+			<span class="menu" onclick="slidePage(2)">영역2</span>
+			<span class="menu" onclick="slidePage(3)">영역3</span>
+		</p>
+	</div>
+	<div class="popular">
+		<div class="popular_single fade">
+			<img src="http://placehold.it/300x300" alt="">
+		</div>
+		<div class="popular_single fade">
+			<img src="http://placehold.it/300x300" alt="">
+		</div>
+		<div class="popular_single fade">
+			<img src="http://placehold.it/300x300" alt="">
+		</div>
+	</div>
+
+	<!-- 카테고리 앨범 -->
+	<h2 style="position: relative; margin: 0 auto; width: 1000px;">카테고리 앨범</h2>
+	<div class="category">
+		<div class="bakery"></div>
+
+		<div class="snack">
+			<div class="snack_sub">
+				<div class="snack_element"></div>
+				<div class="snack_element"></div>
+			</div>
+			<div class="snack_sub">
+				<div class="snack_element"></div>
+				<div class="snack_element"></div>
+			</div>
+			<div class="snack_sub2">
+				<div class="snack_element2"></div>
+				<div class="snack_element2"></div>
+				<div class="snack_element2"></div>
+			</div>
+		</div>
+
+		<div class="beverage">
+			<div class="beverage_element"></div>
+			<div class="beverage_element"></div>
+			<div class="beverage_element bottom"></div>
+			<div class="beverage_element bottom"></div>
+		</div>
+
+		<div class="processed">
+			<div class="processed_element"></div>
+			<div class="processed_element"></div>
+			<div class="processed_element"></div>
+			<div class="processed_element"></div>
+			<div class="processed_element"></div>
+			<div class="processed_element"></div>
+		</div>
+	</div>
+	
+	<!-- COPYRIGHT -->
+	<div class="copyright">
+		<footer>
+			<font style="font-size: 12px;">이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 고객센터</font><br>
+			<font style="font-size: 10px; color: grey;">본 컨텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font><br>
+				<b>Copyright © All Rights Reserved.</b>
+			</footer>
+	</div>
+
+	<!-- JavaScript 파일 외부 참조-->
+	<script type="text/javascript" src="./JavaScript/main.js"></script>
+	<script type="text/javascript" src="./JavaScript/slide2.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="웹프로젝트">
+	<meta name="keywords" content="HTML5, CSS, JavaScript">
+	
+	<!-- CSS 파일 외부참조 -->
+	<link rel="stylesheet" type="text/css" href="../CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/slide.css">
+	
+	<title>상품목록페이지</title>
+</head>
+
+<body>
+
+	<!-- 사이트 로고 및 상단 메뉴 바 -->
+	<div style="z-index: 2;">
+		
+		<header class="header">
+
+			<!-- 로그인 및 회원가입 메뉴 -->
+			<nav class="nav_sign">
+				<a href="./HTML/login.html">로그인</a>
+				<a href="./HTML/signUp.html" style="margin-right: 135px;">회원가입</a>
+			</nav>
+			
+			<!-- 사이트 로고 -->
+			<p align="center">
+				<a href="../main.html">
+					<img src="../Images/logo.png" width="200px;">
+				</a>
+			</p>
+			
+			<!-- 카테고리 메뉴 바 -->	
+			<nav class="topMenu"> 
+				<ul> 
+					<li class="topMenuLi roundLeft">
+						<a class="menuLink roundLeft" href="none">베이커리</a>
+					</li> 
+					<li>|</li> 
+					<li class="topMenuLi"> 
+						<a class="menuLink" href="none">과자</a>
+						<ul class="submenu"> 
+							<li><a class="submenuLink">스낵</a></li> 
+							<li><a class="submenuLink">초콜릿</a></li> 
+							<li><a class="submenuLink">사탕/젤리</a></li> 
+							<li><a class="submenuLink">아이스크림</a></li>
+							<li><a class="submenuLink">씨리얼</a></li>
+						</ul>
+					</li>  
+					<li>|</li> 
+					<li class="topMenuLi"> 
+						<a class="menuLink" href="none">음료</a> 
+						<ul class="submenu"> 
+							<li><a class="submenuLink">탄산</a></li> 
+							<li><a class="submenuLink">주스</a></li> 
+							<li><a class="submenuLink">우유</a></li>
+							<li><a class="submenuLink">생수</a></li> 
+						</ul> 
+					</li> 
+					<li>|</li> 
+					<li class="topMenuLi roundRight"> 
+						<a class="menuLink roundRight" href="none">가공식품</a> 
+						<ul class="submenu"> 
+							<li><a class="submenuLink">햄/소시지/베이컨</a></li> 
+							<li><a class="submenuLink">냉동식품</a></li> 
+							<li><a class="submenuLink">통조림</a></li>
+							<li><a class="submenuLink">즉석식품</a></li> 
+							<li><a class="submenuLink">라면/면</a></li>
+							<li><a class="submenuLink">장/소스/잼</a></li>
+						</ul> 
+					</li>
+				</ul> 
+			</nav>
+			
+		</header>
+	</div>
+	<!-- 사이트 로고 및 상단 메뉴 바 끝 -->
+
+	<!-- 메인 영역 -->
+	<div class="category_main">
+		<!-- 왼쪽 카테고리 -->
+		<aside class="left_category">
+			<h3 class="category_title">카테고리</h3>	
+			<p class="category_bakery">베이커리</p>
+			<details class="left_category_detail">
+				<summary>과자 ∨</summary>
+				<div>스낵</div>
+				<div>초콜릿</div>
+				<div>사탕/젤리</div>
+				<div>아이스크림</div>
+				<div>씨리얼</div>
+			</details>
+			<details class="left_category_detail">
+				<summary>음료 ∨</summary>
+				<div>탄산</div>
+				<div>주스</div>
+				<div>우유</div>
+				<div>생수</div>
+			</details>
+			<details class="left_category_detail">
+				<summary>가공식품 ∨</summary>
+				<div>햄/소시지/베이컨</div>
+				<div>냉동식품</div>
+				<div>통조림</div>
+				<div>즉석식품</div>
+				<div>라면/면</div>
+				<div>장/소스/잼</div>
+			</details>
+			<div style="margin-left:0px; width:180px; border-bottom: 1px solid rgb(173, 172, 172);"></div>
+		</aside>
+		
+
+		<!-- 배너 -->
+		<div class="banner">
+			<img src="http://placehold.it/800x300">
+		</div>
+	
+		<!-- 정렬 버튼 -->
+		<nav class="sort">
+			<div>
+				<span class="sort_btn" onclick="sorting('asc')">낮은가격순</span>
+				<span style="margin-right: 10px;"> | </span>
+				<span class="sort_btn" onclick="sorting('desc')">높은가격순</span>
+				<span style="margin-right: 10px;"> | </span>
+				<span class="sort_btn" onclick="sorting('rating')">평가순</span>
+			</div>
+		</nav>
+
+		<!-- 상품 목록 -->
+		<div class="parent">
+			<div id=3 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품3</p>
+				<p>10,000원</p>
+				<p id=13 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_half.png">
+					<img src="../Images/star_empty.png">
+				</p>
+			</div>
+			<div id=5 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품5</p>
+				<p>10,000원</p>
+				<p id=14 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_empty.png">
+				</p>
+			</div>
+			<div id=1 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품1</p>
+				<p>10,000원</p>
+				<p id=19 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+				</p>
+			</div>
+			<div id=8 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품8</p>
+				<p>10,000원</p>
+				<p id=16 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_half.png">
+				</p>
+			</div>
+			<div id=2 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품2</p>
+				<p>10,000원</p>
+				<p id=12 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_empty.png">
+					<img src="../Images/star_empty.png">
+				</p>
+			</div>
+			<div id=6 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품6</p>
+				<p>10,000원</p>
+				<p id=15 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_half.png">
+				</p>
+			</div>
+			<div id=7 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품7</p>
+				<p>10,000원</p>
+				<p id=18 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+				</p>
+			</div>
+			<div id=9 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품9</p>
+				<p>10,000원</p>
+				<p id=11 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_half.png">
+					<img src="../Images/star_empty.png">
+					<img src="../Images/star_empty.png">
+				</p>
+			</div>
+			<div id=4 class="child">
+				<img src="http://placehold.it/200x200">
+				<p>상품4</p>
+				<p>10,000원</p>
+				<p id=17 class="rates">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_full.png">
+					<img src="../Images/star_half.png">
+				</p>
+			</div>
+		</div>
+
+		<!-- 목록 인덱스 -->
+		<!--<div class="item_index">
+			<span>1</span>
+			<span> | </span>
+			<span>2</span>
+			<span> | </span>
+			<span>3</span>
+		</div>-->
+
+		
+
+	</div>
+	
+	<!-- COPYRIGHT -->
+	<div class="copyright">
+		<footer>
+			<font style="font-size: 12px;">이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 고객센터</font><br>
+			<font style="font-size: 10px; color: grey;">본 컨텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</font><br>
+				<b>Copyright © All Rights Reserved.</b>
+			</footer>
+	</div>
+
+	<!-- JavaScript 파일 외부 참조-->
+	<script type="text/javascript" src="../JavaScript/main.js"></script>
+	<script type="text/javascript" src="../JavaScript/slide2.js"></script>
+
+</body>
+
+</html>

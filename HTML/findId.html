@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="웹프로젝트">
+	<meta name="keywords" content="HTML5, CSS, JavaScript">
+	
+	<!-- CSS 파일 외부참조 -->
+	<link rel="stylesheet" type="text/css" href="../CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/slide.css">
+	
+	<title>ID찾기</title>
+</head>
+
+<body>
+
+	<!-- 사이트 로고 -->
+	<div>		
+		<header class="header">
+			<p align="center">
+				<a href="../main.html">
+					<img src="../Images/logo.png" width="200px;">
+				</a>
+			</p>
+		</header>
+	</div>
+
+
+	<!-- ID 찾기 영역 시작 -->
+	<div class="findID" style="text-align:left">
+ 
+		<input class="findID_tab" id="tab1" type="radio" name="tabs" checked> 
+		<label class="findID_label" for="tab1">이메일로 찾기</label>
+	 
+		<input class="findID_tab" id="tab2" type="radio" name="tabs">
+		<label class="findID_label" for="tab2">휴대폰 번호로 찾기</label>
+	 
+	 
+		<section class="findID_section" id="content1" style="margin-bottom:20px;">
+			<input class="findID_email" type="text" id="findID_email" placeholder="이메일">
+			<div class="findID_email_div">@</div>
+			<select class="findID_email_select" id="findID_domain">
+				<option value="">선택</option>
+				<option value="naver.com">naver.com</option>
+				<option value="hanmail.net">hanmail.net</option>
+				<option value="daum.net">daum.net</option>
+				<option value="nate.com">nate.com</option>
+				<option value="gmail.com">gmail.com</option>
+				<option value="hotmail.com">hotmail.com</option>
+			</select>
+			<input class="findID_verify" type="number" id="findID_verifyNumber" placeholder="인증번호입력">
+			<input type="button" value="인증번호받기" class="findID_verify_btn" onclick="send_by_email()">
+			<input type="button" value="아이디찾기"" class="findID_btn" onclick="findID_by_email()">
+		</section>
+	 
+		<section class="findID_section" id="content2" style="margin-bottom:20px;">
+			<select class="findID_phonenumber" id="findID_agency" style="height: 53px;">
+				<option value="">통신사</option>
+				<option value="skt">SKT</option>
+				<option value="kt">KT</option>
+				<option value="lgu+">LGU+</option>
+				<option value="alttul">알뜰폰</option>
+			</select>
+			<select class="findID_phonenumber" id="findID_number_first" style="height: 53px;">
+				<option value="">번호</option>
+				<option value="010">010</option>
+				<option value="011">011</option>
+				<option value="016">016</option>
+				<option value="017">017</option>
+				<option value="018">018</option>
+				<option value="019">019</option>
+			</select>
+			<input class="findID_phonenumber" type="number" id="findID_number_second">
+			<input class="findID_phonenumber" type="number" id="findID_number_third">
+			<input class="findID_verify" type="number" id="findID_verifyNumberP" placeholder="인증번호입력">
+			<input type="button" value="인증번호받기" class="findID_verify_btn" onclick="send_by_phonenumber()">
+			<input type="button" value="아이디찾기" class="findID_btn" onclick="findID_by_phonenumber()">
+		</section>
+	</div>
+	<p class="copyright_bottom">Copyright ©Reliable Corp All Rights Reserved.</p>
+	<!-- ID 찾기 영역 끝 -->
+
+	<!-- JavaScript 파일 외부 참조-->
+	<script type="text/javascript" src="../JavaScript/main.js"></script>
+
+</body>
+
+</html>

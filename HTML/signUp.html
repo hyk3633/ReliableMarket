@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="웹프로젝트">
+	<meta name="keywords" content="HTML5, CSS, JavaScript">
+	
+	<!-- CSS 파일 외부참조 -->
+	<link rel="stylesheet" type="text/css" href="../CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/slide.css">
+	
+	<title>회원가입</title>
+</head>
+
+<body>
+
+	<!-- 사이트 로고 -->
+	<div>		
+		<header class="header">
+			<p align="center">
+				<a href="../main.html">
+					<img src="../Images/logo.png" width="200px;">
+				</a>
+			</p>
+		</header>
+	</div>
+
+	<!-- 회원가입 영역 시작 -->
+	<div class="signUp">
+		<p style="font-size: 18px; font-weight: bold;">회원정보를 입력하세요.</p>
+		<input class="signUp_input" type="text" id="sign_up_id" placeholder="아이디">
+		<br>
+		<input class="email" type="text" id="sign_up_email" placeholder="이메일">
+		<div class="email_div">@</div>
+		<select class="email_select" id="sign_up_domain">
+			<option value="">선택</option>
+			<option value="naver.com">naver.com</option>
+			<option value="hanmail.net">hanmail.net</option>
+			<option value="daum.net">daum.net</option>
+			<option value="nate.com">nate.com</option>
+			<option value="gmail.com">gmail.com</option>
+			<option value="hotmail.com">hotmail.com</option>
+		</select>
+		<br>
+		<input class="signUp_input" type="password" id="sign_up_pw" placeholder="비밀번호">
+		<br>
+		<input class="signUp_input" type="password" id="sign_up_pwchk" placeholder="비밀번호 확인">
+		<br>
+		<input class="signUp_input" type="text" id="sign_up_name" placeholder="이름">
+		<br>
+		<select class="phonenumber" id="sign_up_agency" style="height: 52px;">
+			<option value="">통신사</option>
+			<option value="skt">SKT</option>
+			<option value="kt">KT</option>
+			<option value="lgu+">LGU+</option>
+			<option value="alttul">알뜰폰</option>
+		</select>
+		<select class="phonenumber" id="sign_up_number_first" style="height: 52px;">
+			<option value="">번호</option>
+			<option value="010">010</option>
+			<option value="011">011</option>
+			<option value="016">016</option>
+			<option value="017">017</option>
+			<option value="018">018</option>
+			<option value="019">019</option>
+		</select>
+		<input class="phonenumber" type="number" id="sign_up_number_second" placeholder="">
+		<input class="phonenumber" type="number" id="sign_up_number_third" placeholder="">
+		<div style="margin-top: 20px; margin-bottom: 20px; border-bottom: 1.5px solid grey;"></div>
+	</div>	
+	<!-- 약관 동의 -->
+	<div class="checkTerms_div">
+		<p style="text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 20px;">약관에 동의하세요.</p>
+		<input type="checkbox" id="sign_up_terms1">
+		<label>[필수] 믿고사는가게 이용약관 동의</label>
+		<br>
+		<input type="checkbox" id="sign_up_terms2">
+		<label>[필수] 전자금융거래 이용약관 동의</label>
+		<br>
+		<input type="checkbox" id="sign_up_terms3">
+		<label>[필수] 개인정보 이용 및 제공 동의</label>
+	</div>
+	<div style="width: 500px; margin-top: 20px; margin-bottom: 20px; border-bottom: 1.5px solid grey;"></div>
+
+
+	<!-- 가입하기 버튼 -->
+	<div class="signUp_div">
+		<input type="button" value="가입하기" class="signUp_btn" onclick="sign_up_chk()">
+		<p class="copyright_bottom">Copyright ©Reliable Corp All Rights Reserved.</p>
+	</div>
+	<br>
+	<!-- 회원가입 영역 끝 -->
+
+	<!-- JavaScript 파일 외부 참조-->
+	<script type="text/javascript" src="../JavaScript/main.js"></script>
+
+</body>
+
+</html>
